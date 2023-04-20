@@ -7,8 +7,6 @@ Topics Covered :
       *TDD Assertions   - assert
 */
 
-const { assert } = require("chai")
-
 describe('Assertion Demo', () => {
     
     it('Implicit Assertions', () => {
@@ -59,15 +57,12 @@ describe('Assertion Demo', () => {
     cy.get("input[placeholder='Password']").type("admin123")   
     cy.get("button[type='submit']").click();
 
-    //Validating User name
     let expName="Selenium Testing";
     cy.get(".oxd-userdropdown-name").then( (x)=>{
         let actName=x.text()
-       //BDD style 
-      expect(actName).to.equal(expName);
-      expect(actName).to.not.equal('testname');
-    
-
+       //BDD menthod
+      //expect(actName).to.equal(expName);
+      expect(actName).to.not.equal(expName); //user name changes 
     } )
   
   })
